@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_cloud_sync_relationship.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync relationship 
+summary: Sie können eine nicht mehr benötigte Cloud Sync-Beziehung löschen. 
+---
+= Löschen einer Cloud Sync-Beziehung
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können eine nicht mehr benötigte Cloud Sync-Beziehung löschen.
+
+.Schritte
+. Wechseln Sie auf der Seite Volumes zur Seite Sync oder zur Registerkarte Sync für ein Volume.
+. Klicken Sie auf das Feld für die zu löschende Beziehung, klicken Sie auf *Aktionen* und wählen Sie dann *Beziehung/s löschen*.
+. Geben Sie im Bestätigungsdialogfeld ein `delete` Um zu bestätigen, und klicken Sie dann auf *Löschen*.
+

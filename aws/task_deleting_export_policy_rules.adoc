@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_export_policy_rules.html 
+keywords: Cloud Volumes Service for AWS, export policy rules 
+summary: Sie können Regeln für die Exportrichtlinie löschen, die nicht mehr benötigt werden. 
+---
+= Exportrichtlinien werden gelöscht
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können Regeln für die Exportrichtlinie löschen, die nicht mehr benötigt werden.
+
+.Schritte
+. Klicken Sie auf den Namen des Datenträgers und wählen Sie dann *Richtlinie exportieren*.
+. Klicken Sie auf *X* für die Policy-Regel, die Sie löschen möchten.
++
+image:diagram_export_policy_delete.png["Löschen einer Exportrichtlinie"]
+
+. Klicken Sie auf *Änderungen speichern*.
+

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: aws/task_modifying_export_policy_rules.html 
+keywords: Cloud Volumes Service for AWS, export policy rules, client access, access types 
+summary: Sie können die Regel für die Exportrichtlinie für ein Volume nach Bedarf ändern. 
+---
+= Ändern einer Regel für die Exportrichtlinie
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können die Regel für die Exportrichtlinie für ein Volume nach Bedarf ändern.
+
+.Schritte
+. Klicken Sie auf den Namen des Datenträgers und wählen Sie dann *Richtlinie exportieren*.
+. Um eine vorhandene Regel für die Exportrichtlinie zu ändern, ändern Sie die folgenden Felder nach Bedarf:
++
+** *Zulässiger Kunde*
+** *Zugriffstyp*
+
+
+. Klicken Sie auf *Änderungen speichern*.
+

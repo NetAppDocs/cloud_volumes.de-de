@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: aws/task_modifying_cloud_sync_schedule.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync schedule, auto sync 
+summary: Wenn eine Cloud Sync-Beziehung zu Beginn erstellt wird, ist die automatische Synchronisierung standardmäßig aktiviert und wird ein Mal am Tag ausgeführt. Sie können den Cloud Sync-Zeitplan nach Bedarf ändern. 
+---
+= Ändern des Cloud Sync-Zeitplans
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Wenn eine Cloud Sync-Beziehung zu Beginn erstellt wird, ist die automatische Synchronisierung standardmäßig aktiviert und wird ein Mal am Tag ausgeführt. Sie können den Cloud Sync-Zeitplan nach Bedarf ändern.
+
+.Schritte
+. Besuchen Sie die Seite „Sync“ oder die Registerkarte „Sync“ für ein Volume auf der Seite „Volumes“, um die Cloud Sync-Beziehungen zu sehen.
++
+image::diagram_modifying_cloud_sync_schedule_sync_relationship.png[Beziehungen synchronisieren]
+
+. Um die automatische Synchronisierung für eine Cloud Sync-Beziehung zu deaktivieren, klicken Sie auf den blauen *EIN*-Schieberegler für die Beziehung.
++
+image::diagram_modifying_cloud_sync_schedule_auto_sync.png[Automatischer Schieberegler]
+
+. Um den Synchronisierungszeitplan zu ändern, klicken Sie auf die Dropdown-Liste unter *Zeitplan*, wählen Sie *Tag/s* oder *Stunde/s* aus, wählen Sie eine Intervallnummer aus und klicken Sie dann auf das Häkchen.
++
+image::diagram_modifying_cloud_sync_schedule.png[Ändern des Cloud Sync-Zeitplans]
+
+. Um Cloud Sync sofort zu starten, klicken Sie unter Aktion auf *Fertig*, wählen Sie *Jetzt synchronisieren* aus, und klicken Sie zur Bestätigung erneut auf *Jetzt synchronisieren*.
+

@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: aws/task_quick_start.html 
+summary: In wenigen Schritten können Sie mit dem Cloud Volumes Service für AWS loslegen. 
+---
+= Schnellstartanleitung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, AWS, documentation, help
+
+
+[role="lead"]
+In wenigen Schritten können Sie mit dem Cloud Volumes Service für AWS loslegen.
+
+
+NOTE: Sie müssen die erforderlichen AWS Netzwerkkomponenten konfigurieren, bevor Sie ein Cloud Volume erstellen. Weitere Informationen finden Sie im_NetApp Cloud Volumes Service for AWS Account Setup Guide_ link:media/cvs_aws_account_setup.pdf["[DE"^]]link:media/cvs_aws_account_setup_jaJP.pdf["[JA"^]] Wenn Sie diese Schritte noch nicht abgeschlossen haben.
+
+[role="quick-margin-para"]
+link:task_selecting_region.html["Geben Sie die AWS-Region an"] Wo Sie Cloud Volumes erstellen möchten.
+
+[role="quick-margin-para"]
+link:task_creating_cloud_volumes_for_aws.html["Cloud Volume erstellen"] In der AWS Cloud müssen Sie Größe und Service-Level angeben und weitere Optionen definieren.
+
+[role="quick-margin-para"]
+link:task_mounting_cloud_volumes_for_aws.html["Montieren Sie das Cloud Volume"] Verwenden Sie NFS für Linux und UNIX Clients oder SMB für Windows Clients auf Ihrer AWS Instanz.

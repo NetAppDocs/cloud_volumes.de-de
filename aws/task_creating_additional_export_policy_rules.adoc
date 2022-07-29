@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: aws/task_creating_additional_export_policy_rules.html 
+keywords: Cloud Volumes Service for AWS, export policy rules, clients, IP range, access 
+summary: Sie können zusätzliche Richtlinien für den Export erstellen, um flexiblen Client-Zugriff zu ermöglichen. Sie können beispielsweise angeben, dass ein bestimmter IP-Bereich nur schreibgeschützten Zugriff auf ein Volume haben soll. 
+---
+= Erstellen zusätzlicher Regeln für Exportrichtlinien
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können zusätzliche Richtlinien für den Export erstellen, um flexiblen Client-Zugriff zu ermöglichen. Sie können beispielsweise angeben, dass ein bestimmter IP-Bereich nur schreibgeschützten Zugriff auf ein Volume haben soll.
+
+.Schritte
+. Klicken Sie auf den Namen des Datenträgers und wählen Sie dann *Richtlinie exportieren*.
+. Klicken Sie auf *+ Regel für Exportrichtlinie hinzufügen*.
+. Legen Sie Werte für die folgenden Felder fest:
++
+** *Zulässiger Kunde*
+** *Zugriffstyp*
+
+
+. Klicken Sie auf *Änderungen speichern*.
+

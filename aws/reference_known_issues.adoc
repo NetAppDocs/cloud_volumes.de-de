@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: aws/reference_known_issues.html 
+keywords: Cloud Volumes Service for AWS limitations and known issues 
+summary: Die folgenden bekannten Probleme und Einschränkungen gibt es in Cloud Volumes Service für AWS. 
+---
+= Bekannte Probleme und Einschränkungen
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Die folgenden bekannten Probleme und Einschränkungen gibt es in Cloud Volumes Service für AWS.
+
+* *Problem*: Wenn ein vorhandenes Volume nur NFSv3 unterstützt und ein Volume mit NFSv4.1 oder Unterstützung für NFSv3 und NFSv4.1 erstellt oder konvertiert wird, kann das vorhandene Volume ohne Angabe der NFS-Version nicht mehr montierbar sein (vers=3).
++
+*Workaround*: Fügen Sie entweder die Option zur Angabe der NFS-Version zum Mount-Befehl hinzu, zum Beispiel `mount -o vers=3 ...` Oder stellen Sie sicher, dass alle Volumes zur Unterstützung von NFSv4.1 konvertiert werden. Beachten Sie, dass Linux-Clients standardmäßig NFSv4.1 verwenden, sofern die Version nicht angegeben wird.
+
+* *Problem*: Das Erstellen eines neuen Volumes aus einem Snapshot kann mit der Meldung 'kann das Volume-Attribut "Dateien" für das Volume nicht setzen _<Volume>_ …​ Grund: Die neue Anzahl muss größer sein als die aktuelle zugewiesene Anzahl von _<Zahl>_'.
++
+*Workaround*: Dieses Problem tritt auf, wenn versucht wird, ein Volume aus einem Snapshot zu erstellen, der derzeit mehr Dateien zugewiesen hat, als das neue Volume für seine zugewiesene Kapazität zugewiesen werden würde. Sie müssen die zugewiesene Kapazität für das neue Volume erhöhen, um genügend Dateien (Inodes) zuzuweisen. Siehe link:reference_selecting_service_level_and_quota.html#allocated-capacity["Auswählen der zugewiesenen Kapazität"] Entsprechende Details.
+
+* *Problem*: Die virtuellen Netzwerk-Schnittstellen werden automatisch in CVS-Regionen gelöscht, die nach 72 Stunden keine Volumes haben. Beim Erstellen eines neuen Volumes müssen Sie das AWS Konto # und CIDR erneut bereitstellen.
++
+*Workaround*: Um zu verhindern, dass die virtuellen Netzwerk-Schnittstellen in Zeiten von Inaktivität gelöscht werden, lassen Sie mindestens ein Volume und senken Sie die Zuweisung und den Service Level, um Kosten zu minimieren.
+
+* *Problem*: Benutzer mit abgelaufenen Abonnements können sich nicht an der Cloud Volumes Service-Benutzeroberfläche anmelden oder mit der API interagieren.
++
+*Workaround*: Rufen Sie die AWS Marketplace Seite für den Cloud Volumes Service auf und verlängern Sie Ihr Abonnement.
+
+

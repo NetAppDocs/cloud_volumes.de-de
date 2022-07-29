@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: aws/task_mounting_cloud_volumes_for_aws.html 
+keywords: Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, NFSv4.1, Linux, UNIX, SMB, Windows 
+summary: Ein Cloud-Volume kann in Ihre AWS Instanz eingebunden werden. Cloud Volumes unterstützen derzeit NFSv3 und NFSv4.1 für Linux- und UNIX-Clients sowie SMB 2.1, 3.0 und 3.1.1 für Windows-Clients. 
+---
+= Cloud-Volume mounten
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Ein Cloud-Volume kann in Ihre AWS Instanz eingebunden werden. Cloud Volumes unterstützen derzeit NFSv3 und NFSv4.1 für Linux- und UNIX-Clients sowie SMB 2.1, 3.0 und 3.1.1 für Windows-Clients.
+
+*Hinweis:* Bitte verwenden Sie das hervorgehobene Protokoll/Dialekt, das von Ihrem Kunden unterstützt wird.
+
+.Schritte
+. Erhalten Sie Mount-Anweisungen für das von Ihnen erstellte Volumen, indem Sie auf das blaue Fragezeichen (?) klicken. Am Ende des Feldes Exportpfade neben dem Namen des Volumes.
++
+Wenn Sie den Mauszeiger über das Fragezeichen bewegen, wird *Mount-Anweisungen anzeigen* angezeigt.
+
++
+image:diagram_mount_1.png["Zeigt die Montageanweisungen an"]
+
+. Klicken Sie auf das Fragezeichen, um die Montageanweisungen anzuzeigen.
++
+*NFS-Beispiel:*
+
++
+image:diagram_mount_instructions_nfs.png["Mount-Anweisungen für NFS"]
+
++
+Die von definierte maximale I/O-Größe `rsize` Und `wsize` Optionen sind 1048576, allerdings wird für die meisten Anwendungsfälle der empfohlene Standardwert von 65536 verwendet.
+
++
+Beachten Sie, dass Linux-Clients standardmäßig NFSv4.1 verwenden, sofern die Version nicht angegeben wird.
+
++
+*SMB-Beispiel:*
+
++
+image:diagram_mount_instructions_smb.png["Mount-Anweisungen für SMB"]
+
+. Stellen Sie über eine SSH oder RDP-Client eine Verbindung zu Ihrer Amazon Elastic Compute Cloud (EC2) Instanz her, und befolgen Sie dann die Mount-Anweisungen für Ihre Instanz.
++
+Nach Abschluss der Schritte in der Mount-Anleitung haben Sie das Cloud-Volume erfolgreich in die AWS-Instanz eingebunden.
+
+

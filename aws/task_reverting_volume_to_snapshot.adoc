@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: aws/task_reverting_volume_to_snapshot.html 
+keywords: Cloud Volumes Service for AWS, snapshots, restore, revert 
+summary: Sie können ein Volume von einem vorhandenen Snapshot auf einen früheren Zeitpunkt zurücksetzen. 
+---
+= Zurücksetzen eines Volume von einem Snapshot
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können ein Volume von einem vorhandenen Snapshot auf einen früheren Zeitpunkt zurücksetzen.
+
+Wenn Sie ein Volume zurücksetzen, überschreibt der Inhalt des Snapshots die vorhandene Volume-Konfiguration. Alle Änderungen an den Daten auf dem Volume nach der Erstellung des Snapshots gehen verloren.
+
+Beachten Sie, dass Clients das Volume nach der Umrüstung nicht neu mounten müssen.
+
+.Schritte
+. Wählen Sie auf der Seite Snapshots oder auf der Registerkarte Snapshots unter Volume Details den Snapshot aus, auf den Sie zurücksetzen möchten, klicken Sie auf *verfügbar* und wählen Sie dann *Volume in Snapshot zurücksetzen* aus.
+. Geben Sie im Dialogfeld Snapshot zurücksetzen den Namen des Volumes ein, das Sie zurücksetzen möchten, und klicken Sie auf *revert*.
+

@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: aws/task_creating_modifying_snapshot_policies.html 
+keywords: Cloud Volumes Service for AWS, snapshot policies 
+summary: Sie können je nach Bedarf eine Snapshot-Richtlinie für ein Cloud-Volume erstellen oder ändern. 
+---
+= Erstellen oder Ändern einer Snapshot-Richtlinie
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können je nach Bedarf eine Snapshot-Richtlinie für ein Cloud-Volume erstellen oder ändern.
+
+.Schritte
+. Klicken Sie auf der Seite Volumes auf den Namen des Volumes und wählen Sie dann *Snapshot Policy* aus.
+. Wählen Sie *hourly*, *Daily*, *Weekly* oder *Monthly* aus, um die Häufigkeit für die Erstellung von Snapshots festzulegen.
++
+Konfigurierte Richtlinien sind mit einem grünen Punkt gekennzeichnet. Nicht definierte Richtlinien sind mit einem roten Punkt markiert.
+
+. Wählen Sie die Anzahl der Schnappschüsse aus, die beibehalten werden sollen.
+. Wählen Sie den Tag, die Stunde und die Minute aus, an dem der Snapshot erstellt werden soll.
+. Wenn Sie zusätzliche Snapshots mit unterschiedlichen Frequenzen erstellen möchten, zum Beispiel monatliche und tägliche Schnappschüsse, wiederholen Sie die Schritte 2 bis 4.
++
+image:diagram_snapshot_policy_modify.png["Snapshot-Richtlinie"]
+
+. Wenn die Schaltfläche *aktiviert* noch nicht auf *EIN* gesetzt ist, klicken Sie auf die Schaltfläche, um die Richtlinie zu aktivieren oder wieder zu aktivieren.
+. Klicken Sie auf *Änderungen speichern*.
+

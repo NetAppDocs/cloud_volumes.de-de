@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_cloud_sync_data_broker.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync, data brokers 
+summary: Sie können einen nicht mehr benötigten Cloud Sync-Daten-Broker löschen. 
+---
+= Löschen eines Cloud Sync-Datenmakers
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können einen nicht mehr benötigten Cloud Sync-Daten-Broker löschen.
+
+Bei dieser Aufgabe wird der Daten-Broker von Cloud Volumes entfernt, die Instanz für den Datenvermittler in AWS aber nicht gelöscht.
+
+Zum Löschen der Instanz für den Datenmanager in AWS müssen Sie für Ihr Konto bei der AWS Konsole die EC2 Instanz für den Broker anhand des Namens suchen und diese dann nach Bedarf beenden.
+
+Alle Cloud Sync-Beziehungen, die den Daten-Broker verwenden, müssen bereits gelöscht worden sein, bevor Sie den Daten-Broker löschen können.
+
+link:task_deleting_cloud_sync_relationship.html["Löschen einer Cloud Sync-Beziehung"]
+
+.Schritte
+. Wechseln Sie auf der Seite Volumes zur Seite Sync oder zur Registerkarte Sync für ein Volume.
+. Löschen Sie einen Daten-Broker, indem Sie auf den Namen des Datenmakers klicken und auf das Papierkorb-Symbol klicken.
+. Geben Sie im Bestätigungsdialogfeld ein `delete` Um zu bestätigen, und klicken Sie dann auf *Löschen*.
+

@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: aws/reference_whats_new_cloud_volumes_aws.html 
+keywords: 'Cloud Volumes Service for AWS, what"s new, features, enhancements' 
+summary: NetApp aktualisiert regelmäßig Cloud Volumes Service für AWS, um Ihnen neue Funktionen und Verbesserungen zu bieten. 
+---
+= Was ist neu in Cloud Volumes Service für AWS
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp aktualisiert regelmäßig Cloud Volumes Service für AWS, um Ihnen neue Funktionen und Verbesserungen zu bieten.
+
+
+
+== Februar 2021
+
+* Eine neue Cloud Volumes API (`PerformanceMetrics`) Steht nun zum Abrufen von Performance-Statistiken wie IOPS, Bandbreite und Latenz zur Verfügung. Weitere Informationen finden Sie unter link:reference_cloud_volume_apis.html["Cloud Volumes APIs"^].
+
+
+
+
+== Juli 2020
+
+* Das Cloud Volumes Service unterstützt jetzt größere private RFC 1918-Netzwerke zwischen /16 und /28. Bisher wurden nur /28 Bereiche unterstützt.
+* Die „Synchronisierung“-Funktion ist nun direkt in die Benutzeroberfläche von Cloud Sync integriert, um einen besseren Funktionsumfang zu bieten.
+* Volumes können über API-Aufrufe in NSFv3, NFSv4.1 und sowohl NFSv3 als auch NFSv4.1 konvertiert werden.
+* Die API-Beispiele und Beispiel-Python-Skripte wurden auf die v2-API aktualisiert. link:reference_cloud_volume_apis.html["Weitere Informationen finden Sie unter Cloud Volumes APIs"].
+* ACLs sind jetzt für NFSv4.1 Volumes aktiviert.
+* Das Cloud Volumes Service ist nun für SOC 2 Typ 1 zertifiziert.
+* Das Cloud Volumes Service ist jetzt in Singapur verfügbar (AP-Südost-1).
+
+
+
+
+== März 2020
+
+* Cloud Volumes Service unterstützt jetzt eine maximale I/O-Größe von 1 MiB für NFSv3- und NFSv4.1-Mounts. Bisher war die maximale I/O-Größe 64 KiB. Durch das Erhöhen der I/O-Größe kann die Performance für einige Workloads verbessert werden. Um die I/O-Größe zu erhöhen, verwenden Sie die Mount-Optionen „rsize“ und/oder „wsize“, zum Beispiel:
+`mount -o nfsvers=4.1,rsize=1048576,wsize=1048576 172.25.0.4:/vol1 /mnt/cv`
+
+
+
+
+== Februar 2020
+
+* Cloud Volumes Service ist jetzt als Abonnement mit Abrechnung (Pay-as-you-go) im AWS Marketplace verfügbar. Weitere Informationen finden Sie in der Marketplace-Liste unter: https://aws.amazon.com/marketplace/pp/B0848MXK74[]Beachten Sie, dass die ursprünglichen monatlichen und jährlichen Abonnementpläne noch verfügbar sind.
+
+
+
+
+== Januar 2020
+
+* Cloud Volumes Service unterstützt jetzt SMB-Multichannel, das mehrere Netzwerkverbindungen gleichzeitig nutzt, um die Performance zu steigern. Multichannel ist standardmäßig auf Windows-Clients aktiviert, erfordert jedoch, dass die EC2-Instanz einen Netzwerkadapter verwendet, der RSS unterstützt (Empfangsseite Skalierung).
+* Beim Zurücksetzen eines Volume auf einen Snapshot steht jetzt über die Benutzeroberfläche von Cloud Volumes Service zur Verfügung. Dies ermöglicht Ihnen das Zurücksetzen von Volumes auf einen zeitpunktgenauen Snapshot, ohne dass Clients neu mounten müssen. Siehe link:task_reverting_volume_to_snapshot.html["Zurücksetzen eines Volume von einem Snapshot"] Entsprechende Details.
+

@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: aws/task_creating_cloud_sync_data_broker.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync, data brokers, sync relationships 
+summary: NetApp Cloud Sync ist in NetApp Cloud Volumes Service für AWS integriert, um schnelle Datensynchronisierung mit oder von einem Cloud-Volume zu ermöglichen. Mit einem Cloud Sync Vermittler von Daten können Sie eine Cloud Sync Beziehung zur Datensynchronisierung erstellen. 
+---
+= Erstellen eines Cloud Sync-Datenmaklers
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp Cloud Sync ist in NetApp Cloud Volumes Service für AWS integriert, um eine schnelle Datensynchronisierung von NFS zu oder von einem Cloud Volume zu ermöglichen. Mit einem Cloud Sync Vermittler von Daten können Sie eine Cloud Sync Beziehung zur Datensynchronisierung erstellen.
+
+Wenn Sie bereits über einen Cloud Sync Daten-Broker in derselben AWS Virtual Private Cloud (VPC) verfügen, die Sie für Ihr Cloud Volumes Konto nutzen, können Sie diese Aufgabe überspringen.
+
+https://docs.netapp.com/us-en/cloudsync/["NetApp Cloud Sync Dokumentation"^]
+
+.Schritte
+. Wechseln Sie auf der Seite Volumes zur Seite Sync oder zur Registerkarte Sync für ein Volume.
+. Erstellen Sie einen Datenmanager, indem Sie auf *Datenmakler erstellen* klicken.
+. Geben Sie Informationen in die folgenden Felder ein:
++
+** *Name*
++
+Geben Sie einen Namen für den Daten-Broker ein.
+
+** *Typ*
++
+Wählen Sie AWS.
+
+** *Region*
++
+Wählen Sie eine verfügbare Region aus.
+
+** *API-Schlüssel*
++
+Geben Sie den Zugriffsschlüssel für Ihr AWS Konto an.
+
+** *Geheimschlüssel*
++
+Geben Sie den geheimen Schlüssel für Ihr AWS Konto an.
+
+** *Tastenfeld*
++
+Wählen Sie ein verfügbares Tastenfeld aus.
+
++
+Nach Eingabe gültiger Tasten wird die Tastenfeld aktualisiert.
+
+** * VPC*
++
+Wählen Sie die VPC aus, die mit Ihrem Cloud Volumes Konto verbunden ist.
+
+** *Subnetz*
++
+Wählen Sie ein verfügbares Subnetz aus, das für den Daten-Broker verwendet werden soll.
+
++
+image::diagram_creating_cloud_sync_data_broker.png[Erstellen eines Cloud Sync-Datenmaklers]
+
+
+
+. Klicken Sie auf *Datenmakler erstellen*, um den Erstellungsprozess für den Datenvermittler zu starten.
++
+Es dauert ein paar Minuten, einen Daten-Broker zu erstellen. Nach dem Erstellen des Datenmakers wird dieser mit einem grünen Punkt markiert, um anzuzeigen, dass er bereit ist.
+
+
+
+Weiter mit link:task_creating_cloud_sync_relationship.html["Erstellen einer Cloud Sync-Beziehung"].

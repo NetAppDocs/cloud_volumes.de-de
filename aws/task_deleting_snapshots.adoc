@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: aws/task_deleting_snapshots.html 
+keywords: Cloud Volumes Service for AWS, snapshots 
+summary: Sie können einen Snapshot auf der Seite Volumes oder Snapshots löschen. 
+---
+= Löschen eines Snapshots
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können einen Snapshot auf der Seite Volumes oder Snapshots löschen.
+
+
+
+== Löschen eines Snapshots von der Seite „Volumes“
+
+.Schritte
+. Klicken Sie auf den Namen des Datenträgers und wählen Sie dann *Snapshots* aus, um eine Liste der Snapshots für das Volume anzuzeigen.
+. Geben Sie die Snapshots an, die Sie löschen möchten, indem Sie die entsprechenden Kontrollkästchen auswählen, auf *Aktionen* klicken und dann in der Dropdown-Liste *Snapshot löschen* wählen.
++
+Alternativ können Sie unter Aktionen auf *verfügbar* klicken und dann in der Dropdown-Liste *Snapshot löschen* wählen.
+
+. Geben Sie im Bestätigungsdialogfeld ein `delete` Um zu bestätigen, und klicken Sie dann auf *Löschen*.
+
+
+
+
+== Löschen eines Snapshots von der Seite Snapshots
+
+.Schritte
+. (Optional) Verwenden Sie das Suchfeld, um die aufgeführten Snapshots zu filtern.
+. Geben Sie die Snapshots an, die Sie löschen möchten, indem Sie die entsprechenden Kontrollkästchen auswählen, auf *Aktionen* klicken und dann in der Dropdown-Liste *Snapshot löschen* wählen.
+. Geben Sie im Bestätigungsdialogfeld ein `delete` Um zu bestätigen, und klicken Sie dann auf *Löschen*.
+

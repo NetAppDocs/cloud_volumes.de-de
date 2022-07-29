@@ -1,0 +1,455 @@
+---
+sidebar: sidebar 
+permalink: aws/reference_selecting_service_level_and_quota.html 
+keywords: Cloud Volumes Service for AWS, security levels, bandwidth, capacity 
+summary: Die Kosten für Cloud Volumes Service für AWS basieren auf dem Service-Level und der zugewiesenen Kapazität, die Sie auswählen. Durch die Auswahl des geeigneten Service Levels und der Kapazität erfüllen Sie Ihre Storage-Anforderungen zu den niedrigsten Kosten. 
+---
+= Auswahl des entsprechenden Service Levels und der zugewiesenen Kapazität
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Kosten für Cloud Volumes Service für AWS basieren auf dem _Service Level_ und der von Ihnen ausgewählten _zugewiesenen Kapazität_. Durch die Auswahl des geeigneten Service Levels und der Kapazität erfüllen Sie Ihre Storage-Anforderungen zu den niedrigsten Kosten.
+
+
+IMPORTANT: _Alle Preisinformationen in diesem Artikel basieren auf den Listenpreisen ab 12. September 2018. Die Informationen werden nur zu Beispielzwecken bereitgestellt und können geändert werden._
+
+
+
+== Überlegungen
+
+Storage-Anforderungen beinhalten zwei grundlegende Aspekte:
+
+* Storage_Capacity_ für das Speichern von Daten
+* Storage _Bandbreite_ für die Interaktion mit Daten
+
+
+Wenn Sie mehr Speicherplatz verbrauchen als die für das Volume ausgewählte Kapazität, gelten die folgenden Überlegungen:
+
+* Sie werden die zusätzliche Storage-Kapazität, die Sie verbrauchen, zu dem von Ihrem Service Level definierten Preis in Rechnung gestellt.
+* Die für das Volume verfügbare Storage-Bandbreite wächst erst, wenn Sie die zugewiesene Kapazitätsgröße erhöhen oder den Service Level ändern.
+
+
+
+
+== Service-Leveln
+
+Cloud Volumes Service für AWS unterstützt drei Service-Level. Sie geben Ihren Service-Level an, wenn Sie das Volume erstellen oder ändern.
+
+link:task_creating_cloud_volumes_for_aws.html["Erstellung von Cloud Volumes"]
+link:task_modifying_cloud_volumes_for_aws.html["Ändern von Cloud Volumes"]
+
+Die Service Levels werden auf unterschiedliche Storage-Kapazitäts- und Storage-Anforderungen abgestimmt:
+
+* **Standard** (Kapazität)
++
+Wenn Sie Kapazität zu den niedrigsten Kosten benötigen und Ihre Bandbreitenanforderungen begrenzt sind, eignen sich die standardmäßigen Service-Levels möglicherweise am besten für Sie. Ein Beispiel hierfür ist die Nutzung des Volumes als Backup-Ziel.
+
++
+** Listenpreis: 0.10 US-Dollar pro GB pro Monat (Stand: 12. September 2018)
+** Bandbreite: 16 KB Bandbreite pro bereitgestelltem GB Kapazität
+
+
+* **Premium** (ein ausgewogenes Verhältnis von Kapazität und Performance)
++
+Wenn Ihre Applikation einen ausgewogenen Bedarf an Storage-Kapazität und Bandbreite hat, ist das Premium Service Level möglicherweise am besten für Sie geeignet. Dieses Level ist pro MB/s günstiger als das Standard-Service-Level und ist zudem pro GB günstiger als das Extreme Service Level.
+
++
+** Listenpreis: 0.20 US-Dollar pro GB pro Monat (Stand: 12. September 2018)
+** Bandbreite: 64 KB Bandbreite pro bereitgestelltem GB Kapazität
+
+
+* **Extreme** (Leistung)
++
+Das extrem hohe Service-Level ist hinsichtlich der Storage-Bandbreite am kostengünstigsten. Wenn Ihre Applikation eine Storage-Bandbreite ohne die damit verbundene Nachfrage nach viel Storage-Kapazität benötigt, ist das Extreme Service Level wahrscheinlich das richtige für Sie.
+
++
+** Listenpreis: 0.30 US-Dollar pro GB pro Monat (Stand: 12. September 2018)
+** Bandbreite: 128 KB Bandbreite pro bereitgestelltem GB Kapazität
+
+
+
+
+
+
+== Zugewiesene Kapazität
+
+Beim Erstellen oder Ändern des Volume wird die zugewiesene Kapazität für das Volume angegeben.
+
+link:task_creating_cloud_volumes_for_aws.html["Erstellung von Cloud Volumes"]
+link:task_modifying_cloud_volumes_for_aws.html["Ändern von Cloud Volumes"]
+
+Wählen Sie Ihr Service Level zwar basierend auf Ihren allgemeinen und allgemeinen geschäftlichen Anforderungen aus, Sie sollten jedoch Ihre zugewiesene Kapazitätsgröße entsprechend den spezifischen Anforderungen von Applikationen auswählen, zum Beispiel:
+
+* Wie viel Speicherplatz benötigen die Applikationen
+* Wie viel Storage-Bandbreite pro Sekunde benötigen die Applikationen oder Benutzer
+
+
+Die zugewiesene Kapazität wird in GB angegeben. Die zugewiesene Kapazität eines Volumes kann im Bereich von 100 GB bis 100,000 GB (entspricht 100 TB) eingestellt werden.
+
+
+
+=== Anzahl Inodes
+
+Volumes kleiner als oder gleich 1 TB können bis zu 20 Millionen Inodes belegen. Die Zahl der Inodes steigt um 20 Millionen pro TB, die Sie zuweisen, bis zu einem Maximum von 100 Millionen Inodes.
+
+* \<= 1 TB = 20 Millionen Inodes
+* >1 TB bis 2 TB = 40 Millionen Inodes
+* >2 TB bis 3 TB = 60 Millionen Inodes
+* >3 TB bis 4 TB = 80 Millionen Inodes
+* >4 TB bis 100 TB = 100 Millionen Inodes
+
+
+
+
+== Bandbreite
+
+Die Kombination aus Service Level und der ausgewählten Kapazität bestimmt die maximale Bandbreite für das Volume.
+
+Wenn Ihre Applikationen oder Benutzer mehr Bandbreite benötigen als Ihre Auswahl, können Sie den Service Level ändern oder die zugewiesene Kapazität erhöhen. Die Änderungen unterbrechen den Datenzugriff nicht.
+
+
+
+== Auswählen des Service-Levels und der zugewiesenen Kapazität
+
+Um das für Ihren Bedarf am besten geeignete Service-Level und die zugewiesene Kapazität auszuwählen, müssen Sie wissen, wie viel Kapazität und Bandbreite Sie zu Spitzenzeiten oder am Edge-Bereich benötigen.
+
+
+
+=== Kostenvergleich für Service Level und zugewiesene Kapazität
+
+In der folgenden Tabelle werden die Kosten für verschiedene Service Level und die zugewiesenen Kapazitätsgrößen verglichen. In der Tabelle gibt die Spalte ganz links die Kapazität an, und die anderen Spalten definieren die verfügbaren MB/s an jedem Kapazitätspunkt und deren Kosten.
+
+
+IMPORTANT: _Alle Preisinformationen basieren auf den Listenpreisen ab 12. September 2018. Die Informationen werden nur zu Beispielzwecken bereitgestellt und können geändert werden._
+
+[cols="10,15,15,15,15,15,15"]
+|===
+| Kapazität 2+| Standard 2+| Premium 2+| Extrem 
+
+
+| **TB** | **MB/s** | **Kosten** | **MB/s** | **Kosten** | **MB/s** | **Kosten** 
+
+
+| 0.1 (100 GB) | 1.6 | 10 USD | 6.4 | 20 USD | 12.8 | 30 USD 
+
+
+| 1 | 16 | 100 USD | 64 | 200 USD | 128 | 300 USD 
+
+
+| 2 | 32 | 200 USD | 128 | 400 USD | 256 | 600 USD 
+
+
+| 3 | 48 | 300 USD | 192 | 600 USD | 384 | 900 USD 
+
+
+| 4 | 64 | 400 USD | 256 | 800 USD | 512 | 1,200 USD 
+
+
+| 5 | 80 | 500 USD | 320 | 1,000 USD | 640 | 1,500 USD 
+
+
+| 6 | 96 | 600 USD | 384 | 1,200 USD | 768 | 1,800 USD 
+
+
+| 7 | 112 | 700 USD | 448 | 1,400 USD | 896 | 2,100 USD 
+
+
+| 8 | 128 | 800 USD | 512 | 1,600 USD | 1,024 | 2,400 USD 
+
+
+| 9 | 144 | 900 USD | 576 | 1,800 USD | 1,152 | 2,700 USD 
+
+
+| 10 | 160 | 1,000 USD | 640 | 2,000 USD | 1,280 | 3,000 USD 
+
+
+| 11 | 176 | 1,100 USD | 704 | 2,200 USD | 1,408 | 3,300 USD 
+
+
+| 12 | 192 | 1,200 USD | 768 | 2,400 USD | 1,536 | 3,600 USD 
+
+
+| 13 | 208 | 1,300 USD | 832 | 2,600 USD | 1,664 | 3,900 USD 
+
+
+| 14 | 224 | 1,400 USD | 896 | 2,800 USD | 1,792 | 4,200 USD 
+
+
+| 15 | 240 | 1,500 USD | 960 | 3,000 USD | 1,920 | 4,500 USD 
+
+
+| 16 | 256 | 1,600 USD | 1,024 | 3,200 USD | 2,048 | 4,800 USD 
+
+
+| 17 | 272 | 1,700 USD | 1,088 | 3,400 USD | 2,176 | 5,100 USD 
+
+
+| 18 | 288 | 1,800 USD | 1,152 | 3,600 USD | 2,304 | 5,400 USD 
+
+
+| 19 | 304 | 1,900 USD | 1,216 | 3,800 USD | 2,432 | 5,700 USD 
+
+
+| 20 | 320 | 2,000 USD | 1,280 | 4,000 USD | 2,560 | 6,000 USD 
+
+
+| 21 | 336 | 2,100 USD | 1,344 | 4,200 USD | 2,688 | 6,300 USD 
+
+
+| 22 | 352 | 2,200 USD | 1,408 | 4,400 USD | 2,816 | 6,600 USD 
+
+
+| 23 | 368 | 2,300 USD | 1,472 | 4,600 USD | 2,944 | 6,900 USD 
+
+
+| 24 | 384 | 2,400 USD | 1,536 | 4,800 USD | 3,072 | 7,200 USD 
+
+
+| 25 | 400 | 2,500 USD | 1,600 | 5,000 USD | 3,200 | 7,500 USD 
+
+
+| 26 | 416 | 2,600 USD | 1,664 | 5,200 USD | 3,328 | 7,800 USD 
+
+
+| 27 | 432 | 2,700 USD | 1,728 | 5,400 USD | 3,456 | 8,100 USD 
+
+
+| 28 | 448 | 2,800 USD | 1,792 | 5,600 USD | 3,584 | 8,400 USD 
+
+
+| 29 | 464 | 2,900 USD | 1,856 | 5,800 USD | 3,712 | 8,700 USD 
+
+
+| 30 | 480 | 3,000 USD | 1,920 | 6,000 USD | 3,840 | 9,000 USD 
+
+
+| 31 | 496 | 3,100 USD | 1,984 | 6,200 USD | 3,968 | 9,300 USD 
+
+
+| 32 | 512 | 3,200 USD | 2,048 | 6,400 USD | 4,096 | 9,600 USD 
+
+
+| 33 | 528 | 3,300 USD | 2,112 | 6,600 USD | 4,224 | 9,900 USD 
+
+
+| 34 | 544 | 3,400 USD | 2,176 | 6,800 USD | 4,352 | 10,200 USD 
+
+
+| 35 | 560 | 3,500 USD | 2,240 | 7,000 USD | 4,480 | 10,500 USD 
+
+
+| 36 | 576 | 3,600 USD | 2,304 | 7,200 USD | 4,500 | 10,800 USD 
+
+
+| 37 | 592 | 3,700 USD | 2,368 | 7,400 USD | 4,500 | 11,100 USD 
+
+
+| 38 | 608 | 3,800 USD | 2,432 | 7,600 USD | 4,500 | 11,400 USD 
+
+
+| 39 | 624 | 3,900 USD | 2,496 | 7,800 USD | 4,500 | 11,700 USD 
+
+
+| 40 | 640 | 4,000 USD | 2,560 | 8,000 USD | 4,500 | 12,000 USD 
+
+
+| 41 | 656 | 4,100 USD | 2,624 | 8,200 USD | 4,500 | 12,300 USD 
+
+
+| 42 | 672 | 4,200 USD | 2,688 | 8,400 USD | 4,500 | 12,600 USD 
+
+
+| 43 | 688 | 4,300 USD | 2,752 | 8,600 USD | 4,500 | 12,900 USD 
+
+
+| 44 | 704 | 4,400 USD | 2,816 | 8,800 USD | 4,500 | 13,200 USD 
+
+
+| 45 | 720 | 4,500 USD | 2,880 | 9,000 USD | 4,500 | 14,500 USD 
+
+
+| 46 | 736 | 4,600 USD | 2,944 | 9,200 USD | 4,500 | 13,800 USD 
+
+
+| 47 | 752 | 4,700 USD | 3,008 | 9,400 USD | 4,500 | 14,100 USD 
+
+
+| 48 | 768 | 4,800 USD | 3,072 | 9,600 USD | 4,500 | 14,400 USD 
+
+
+| 49 | 784 | 4,900 USD | 3,136 | 9,800 USD | 4,500 | 14,700 USD 
+
+
+| 50 | 800 | 5,000 USD | 3,200 | 10,000 USD | 4,500 | 15,000 USD 
+
+
+| 51 | 816 | 5,100 USD | 3,264 | 10,200 USD | 4,500 | 15,300 USD 
+
+
+| 52 | 832 | 5,200 USD | 3,328 | 10,400 USD | 4,500 | 15,600 USD 
+
+
+| 53 | 848 | 5,300 USD | 3,392 | 10,600 USD | 4,500 | 15,900 USD 
+
+
+| 54 | 864 | 5,400 USD | 3,456 | 10,800 USD | 4,500 | 16,200 USD 
+
+
+| 55 | 880 | 5,500 USD | 3,520 | 11,000 USD | 4,500 | 16,500 USD 
+
+
+| 56 | 896 | 5,600 USD | 3,584 | 11,200 USD | 4,500 | 16,800 USD 
+
+
+| 57 | 912 | 5,700 USD | 3,648 | 11,400 USD | 4,500 | 17,100 USD 
+
+
+| 58 | 928 | 5,800 USD | 3,712 | 11,600 USD | 4,500 | 17,400 USD 
+
+
+| 59 | 944 | 5,900 USD | 3,776 | 11,800 USD | 4,500 | 17,700 USD 
+
+
+| 60 | 960 | 6,000 USD | 3,840 | 12,000 USD | 4,500 | 18,000 USD 
+
+
+| 61 | 976 | 6,100 USD | 3,904 | 12,200 USD | 4,500 | 18,300 USD 
+
+
+| 62 | 992 | 6,200 USD | 3,968 | 12,400 USD | 4,500 | 18,600 USD 
+
+
+| 63 | 1,008 | 6,300 USD | 4,032 | 12,600 USD | 4,500 | 18,900 USD 
+
+
+| 64 | 1,024 | 6,400 USD | 4,096 | 12,800 USD | 4,500 | 19,200 USD 
+
+
+| 65 | 1,040 | 6,500 USD | 4,160 | 13,000 USD | 4,500 | 19,500 USD 
+
+
+| 66 | 1,056 | 6,600 USD | 4,224 | 13,200 USD | 4,500 | 19,800 USD 
+
+
+| 67 | 1,072 | 6,700 USD | 4,288 | 13,400 USD | 4,500 | 20,100 USD 
+
+
+| 68 | 1,088 | 6,800 USD | 4,352 | 13,600 USD | 4,500 | 20,400 USD 
+
+
+| 69 | 1,104 | 6,900 USD | 4,416 | 13,800 USD | 4,500 | 20,700 USD 
+
+
+| 70 | 1,120 | 7,000 USD | 4,480 | 14,000 USD | 4,500 | 21,000 USD 
+
+
+| 71 | 1,136 | 7,100 USD | 4,500 | 14,200 USD | 4,500 | 21,300 USD 
+
+
+| 72 | 1,152 | 7,200 USD | 4,500 | 14,400 USD | 4,500 | 21,600 USD 
+
+
+| 73 | 1,168 | 7,300 USD | 4,500 | 14,600 USD | 4,500 | 21,900 USD 
+
+
+| 74 | 1,184 | 7,400 USD | 4,500 | 14,800 USD | 4,500 | 22,200 USD 
+
+
+| 75 | 1,200 | 7,500 USD | 4,500 | 15,000 USD | 4,500 | 22,500 USD 
+
+
+| 76 | 1,216 | 7,600 USD | 4,500 | 15,200 USD | 4,500 | 22,800 USD 
+
+
+| 77 | 1,232 | 7,700 USD | 4,500 | 15,400 USD | 4,500 | 23,100 USD 
+
+
+| 78 | 1,248 | 7,800 USD | 4,500 | 15,600 USD | 4,500 | 23,400 USD 
+
+
+| 79 | 1,264 | 7,900 USD | 4,500 | 15,800 USD | 4,500 | 23,700 USD 
+
+
+| 80 | 1,280 | 8,000 USD | 4,500 | 16,000 USD | 4,500 | 24,000 USD 
+
+
+| 81 | 1,296 | 8,100 USD | 4,500 | 16,200 USD | 4,500 | 24,300 USD 
+
+
+| 82 | 1,312 | 8,200 USD | 4,500 | 16,400 USD | 4,500 | 24,600 USD 
+
+
+| 83 | 1,328 | 8,300 USD | 4,500 | 16,600 USD | 4,500 | 24,900 USD 
+
+
+| 84 | 1,344 | 8,400 USD | 4,500 | 16,800 USD | 4,500 | 25,200 USD 
+
+
+| 85 | 1,360 | 8,500 USD | 4,500 | 17,000 USD | 4,500 | 25,500 USD 
+
+
+| 86 | 1,376 | 8,600 USD | 4,500 | 17,200 USD | 4,500 | 25,800 USD 
+
+
+| 87 | 1,392 | 8,700 USD | 4,500 | 17,400 USD | 4,500 | 26,100 USD 
+
+
+| 88 | 1,408 | 8,800 USD | 4,500 | 17,600 USD | 4,500 | 26,400 USD 
+
+
+| 89 | 1,424 | 8,900 USD | 4,500 | 17,800 USD | 4,500 | 26,700 USD 
+
+
+| 90 | 1,440 | 9,000 USD | 4,500 | 18,000 USD | 4,500 | 27,000 USD 
+
+
+| 91 | 1,456 | 9,100 USD | 4,500 | 18,200 USD | 4,500 | 27,300 USD 
+
+
+| 92 | 1,472 | 9,200 USD | 4,500 | 18,400 USD | 4,500 | 27,600 USD 
+
+
+| 93 | 1,488 | 9,300 USD | 4,500 | 18,600 USD | 4,500 | 27,900 USD 
+
+
+| 94 | 1,504 | 9,400 USD | 4,500 | 18,800 USD | 4,500 | 28,200 USD 
+
+
+| 95 | 1,520 | 9,500 USD | 4,500 | 19,000 USD | 4,500 | 28,500 USD 
+
+
+| 96 | 1,536 | 9,600 USD | 4,500 | 19,200 USD | 4,500 | 28,800 USD 
+
+
+| 97 | 1,552 | 9,700 USD | 4,500 | 19,400 USD | 4,500 | 29,100 USD 
+
+
+| 98 | 1,568 | 9,800 USD | 4,500 | 19,600 USD | 4,500 | 29,400 USD 
+
+
+| 99 | 1,584 | 9,900 USD | 4,500 | 19,800 USD | 4,500 | 29,700 USD 
+
+
+| 100 | 1,600 | 10,000 USD | 4,500 | 20,000 USD | 4,500 | 30,000 USD 
+|===
+
+
+=== Beispiel 1
+
+Beispielsweise benötigt Ihre Applikation 25 TB Kapazität und 100 MB/s Bandbreite. Bei einer Kapazität von 25 TB würde der Standard Service Level 400 MB/s Bandbreite zu Kosten von 2,500 US-Dollar bereitstellen, wodurch Standard in diesem Fall das am besten geeignete Servicelevel ist.
+
+image:diagram_service_level_quota_example1.png["Auswahl von Service Level und Kapazität, Beispiel 1"]
+
+
+
+=== Beispiel 2
+
+Beispielsweise benötigt Ihre Applikation 12 TB Kapazität und eine Spitzenbandbreite von 800 MB/s. Der extreme Service-Level kann zwar die Anforderungen der Applikation an die 12-TB-Marke erfüllen, ist aber kostengünstiger, 13 TB auf dem Premium-Service-Level auszuwählen.
+
+image:diagram_service_level_quota_example2.png["Auswahl von Service-Leveln und Kapazitäten, Beispiel 2"]

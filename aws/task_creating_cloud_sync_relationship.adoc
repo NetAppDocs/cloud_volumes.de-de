@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: aws/task_creating_cloud_sync_relationship.html 
+keywords: Cloud Volumes Service for AWS, Cloud Sync relationships, target, source 
+summary: Dank einer Cloud Sync Beziehung lassen sich Daten zum Cloud-Volume bzw. aus diesem synchronisieren. 
+---
+= Erstellen einer Cloud Sync-Beziehung
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Dank einer Cloud Sync Beziehung lassen sich Daten zum Cloud-Volume bzw. aus diesem synchronisieren.
+
+.Bevor Sie beginnen
+* Sie müssen bereits einen Cloud Sync-Daten-Broker besitzen.
++
+link:task_creating_cloud_sync_data_broker.html["Erstellen eines Cloud Sync-Datenmaklers"]
+
+* Die IP-Adresse des Datenmakers muss sowohl für die Quell- als auch für die Ziel-Volumes zur Exportrichtlinie hinzugefügt worden sein.
++
+Die Exportrichtlinie auf dem Ziel-Volume muss Schreibzugriff auf den Daten-Broker erlauben.
+
++
+link:task_creating_additional_export_policy_rules.html["Erstellen zusätzlicher Regeln für Exportrichtlinien"]
+
+
+
+Die in Cloud Volumes Service integrierte Cloud Sync-Funktionalität unterstützt derzeit nur NFSv3. Wenn Sie zwischen SMB Volumes synchronisieren möchten, verwenden Sie den https://cloudsync.netapp.com["Cloud Sync Service"^] Direkt (cloudsync.netapp.com).
+
+.Schritte
+. Wechseln Sie auf der Seite Volumes zur Seite Sync oder zur Registerkarte Sync für ein Volume.
+. Erstellen Sie eine Cloud Sync-Beziehung, indem Sie auf *Neue Beziehung erstellen* klicken.
+. Führen Sie eine der folgenden Aktionen durch:
++
+** Um Daten mit dem Volumen zu synchronisieren, wählen Sie *Volumen als Ziel verwenden*.
+** Um Daten aus dem Volumen zu synchronisieren, wählen Sie *Volumen als Quelle verwenden*.
++
+image::diagram_creating_cloud_sync_relationship.png[Erstellen einer Cloud Sync-Beziehung]
+
+
+
+. Geben Sie im Feld *Host* (nicht ausgefüllt) die IP-Adresse des NFS-Servers ein, den Sie synchronisieren oder von synchronisieren möchten.
++
+Nach wenigen Augenblicken wird automatisch eine Liste der verfügbaren Exporte ermittelt.
+
+. Wählen Sie im Feld *Export* einen der verfügbaren Exporte aus.
+. (Optional) Aktivieren Sie das Kontrollkästchen *Dateien auf Ziel löschen, wenn sie aus Quelle* gelöscht werden, wenn Sie die Dateien auf dem Ziel löschen möchten, wenn sie aus der Quelle gelöscht werden.
+. Klicken Sie auf *Beziehung erstellen*.
++
+Der Beziehungsstatus wird angezeigt, und in den Feldern Dateifortschritt wird die Anzahl der kopierten Dateien angezeigt.
+
+
