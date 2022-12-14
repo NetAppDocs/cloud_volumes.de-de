@@ -33,6 +33,7 @@ link:task_creating_additional_export_policy_rules.html["Erstellen zusätzlicher 
 
 
 
+.Über diese Aufgabe
 Die in Cloud Volumes Service integrierte Cloud Sync-Funktionalität unterstützt derzeit nur NFSv3. Wenn Sie zwischen SMB Volumes synchronisieren möchten, verwenden Sie den https://cloudsync.netapp.com["Cloud Sync Service"^] Direkt (cloudsync.netapp.com).
 
 .Schritte

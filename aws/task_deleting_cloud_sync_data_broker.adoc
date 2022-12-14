@@ -19,10 +19,12 @@ summary: Sie können einen nicht mehr benötigten Cloud Sync-Daten-Broker lösch
 [role="lead"]
 Sie können einen nicht mehr benötigten Cloud Sync-Daten-Broker löschen.
 
+.Über diese Aufgabe
 Bei dieser Aufgabe wird der Daten-Broker von Cloud Volumes entfernt, die Instanz für den Datenvermittler in AWS aber nicht gelöscht.
 
 Zum Löschen der Instanz für den Datenmanager in AWS müssen Sie für Ihr Konto bei der AWS Konsole die EC2 Instanz für den Broker anhand des Namens suchen und diese dann nach Bedarf beenden.
 
+.Bevor Sie beginnen
 Alle Cloud Sync-Beziehungen, die den Daten-Broker verwenden, müssen bereits gelöscht worden sein, bevor Sie den Daten-Broker löschen können.
 
 link:task_deleting_cloud_sync_relationship.html["Löschen einer Cloud Sync-Beziehung"]

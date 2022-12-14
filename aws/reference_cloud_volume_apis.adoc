@@ -65,7 +65,7 @@ Die APIs sind nach Funktionen aufgeführt, beispielsweise:
 
 == Verwendung der Cloud Volumes APIs
 
-In diesem Abschnitt wird die Verwendung der Cloud Volumes APIs erläutert. Die Beispiele verwenden Curl aus einer Linux-Bash-Shell. Sie müssen ersetzen `<api_url>`, `<api_key>`, und `<secret_key>` Mit den Werten, die Sie von aufgezeichnet haben ,Suchen der API-URL, des API-Schlüssels und des Geheimschlüssels.
+In diesem Abschnitt wird die Verwendung der Cloud Volumes APIs erläutert. Die Beispiele verwenden Curl aus einer Linux-Bash-Shell. Sie müssen ersetzen `<api_url>`, `<api_key>`, und `<secret_key>` Mit den Werten, die Sie von aufgezeichnet haben <<finding_urL_key_secretKey,Suchen der API-URL, des API-Schlüssels und des Geheimschlüssels>>.
 
 
 
